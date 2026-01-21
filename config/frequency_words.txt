@@ -260,3 +260,40 @@
 [H5/小游戏投放]
 /H5|小游戏|小程序|mini\s*game|HTML5\s*game/i => H5/小游戏
 /试玩广告|Playable\s*Ads|playable|互动广告|Interactive\s*Ads/i => 试玩广告
+
+[试玩平台（Try-before-Install / P2E）]
+/Try[-\s]?before[-\s]?Install|先体验后下载|试玩转安装|试玩转化|试玩落地页|试玩激励|试玩奖励/i => 试玩平台
+/Play[-\s]?to[-\s]?Earn|P2E|积分兑换|积分换现金|分红机制|分红权益|任务系统|签到奖励|邀请返利|充值返利|兑换码/i => 激励体系
+/裂变|裂变式增长|拉新裂变|好友助力|社交分享激励|K因子|传播链路|低成本获客/i => 裂变增长
+/oCPM|降低买量成本|精准投放|素材迭代|投放策略优化|ROI优化|LTV提升|转化漏斗/i => 买量优化
+/游戏出海|海外投放|全球化发行|Facebook官方优质合作伙伴|Google\s*Ads认证/i => 出海与背书
+
+[CTV/OTT（联网电视/流媒体）]
+/Connected\s*TV|\bCTV\b|\bOTT\b|Streaming\s*TV|Internet\s*TV|Smart\s*TV|联网电视|智能电视|OTT电视|流媒体电视/i => CTV/OTT
+
+[CTV 程序化与标准（排除传统电视）]
++/Connected\s*TV|\bCTV\b|\bOTT\b|联网电视|OTT电视/i
+/Programmatic|CTV\s*Advertising|Ad\s*Serving|SSP|DSP|Ad\s*Podding|DAI|Addressable\s*TV|Audience\s*Targeting|Cross[-\s]?Screen\s*Measurement|Viewability|VAST|VPAID|IAB.*CTV/i => CTV AdTech
+!Traditional\s*TV
+!Cable\s*TV
+
+[流媒体模式/内容生态（SVOD/AVOD/FAST）]
+/SVOD|AVOD|FAST|Streaming\s*Platforms|Original\s*Content|Exclusive\s*Rights/i => 流媒体生态
+/Netflix|Disney\+|Hulu|Amazon\s*Prime\s*Video|Peacock|Tubi|Pluto\s*TV|Roku|Fire\s*TV|Apple\s*TV|Google\s*TV|Chromecast|Tizen|webOS|Android\s*TV|爱奇艺|腾讯视频/i => 流媒体平台
+
+[H5/小游戏（内容侧）]
++/(H5|小游戏|HTML5|mini\s*game)/i
+/休闲|益智|解谜|塔防|RPG|模拟经营|动作冒险|卡牌|放置|沙盒|文字冒险|闯关|PVP|排行榜|社交互动|副本|成就系统/i => 题材玩法
+/HTML5引擎|跨平台适配|低配优化|云存档|多语言|自适应分辨率|3D渲染|物理引擎|AIGC/i => 技术亮点
+/公会|实时聊天|组队|交易市场|好友助力|动态分享/i => 社交系统
+/激励视频|插屏|信息流|开屏|限时礼包|签到奖励|节日庆典|新服开启|邀请返利|抽卡|累计充值|兑换码/i => 商业化活动
+/元宇宙|区块链游戏|轻量化|IP联动|电竞化|云游戏|女性向|短时游戏/i => 趋势热点
+
+[广告联盟/变现与投放（AdN）]
+/广告联盟|Ad\s*Network|流量变现|变现分成|SDK接入|SSP|DSP|程序化交易平台/i => 联盟/平台
+/CPM|CPC|CPA|CPS|CPT|oCPM|eCPM|填充率|Fill\s*Rate/i => 计费与指标
+/原生广告|开屏|信息流|激励视频|插屏|视频广告|Rewarded\s*Video|Interstitial/i => 广告形式
+/DMP|重定向|Retargeting|LBS|行为分析|上下文匹配|零方数据|First[-\s]?party\s*data|GDPR|CCPA|隐私沙盒/i => 定向与隐私
+/RTB|瀑布流|Waterfall|应用内竞价|In[-\s]?App\s*Bidding|Header\s*Bidding|反作弊|Fraud|低质流量|eCPM优化|AB测试/i => 竞价与优化
+/DCO|素材动态生成|多维度归因|跨渠道归因|跨屏投放|多模态创意/i => 创意与归因
+/品牌曝光|效果转化|用户拉新|私域沉淀|深度转化/i => 业务目标
