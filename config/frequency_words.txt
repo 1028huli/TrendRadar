@@ -26,6 +26,8 @@
 [GLOBAL_FILTER]
 # 过滤标题党
 震惊
+航天
+芯片
 
 
 
@@ -149,46 +151,47 @@
 #                         企业与品牌
 # ═══════════════════════════════════════════════════════════════
 
-/胖东来|于东来/ => 胖东来
-
-/DeepSeek|梁文锋/i => DeepSeek
-
-/华为|鸿蒙|HarmonyOS|任正非/i => 华为
-
-/比亚迪|王传福|byd/i => 比亚迪
-
-/大疆|\bDJI\b/i => 大疆
-
-/宇树|王兴兴|Unitree/ => 宇树机器人
-
-/智元|灵犀|稚晖君|彭志辉|AgiBot/ => 智元机器人
-/众擎|EngineAI|赵同阳/ => 众擎机器人
-
-/黑神话|冯骥/ => 黑神话悟空
-
-/影之刃零|梁其伟/ => 影之刃零
-
-/三体|流浪地球|刘慈欣|郭帆/ => 三体/流浪地球
-
-申奥
-
-/京东|刘强东/ => 京东
-
-/字节|bytedance|张一鸣/i => 字节跳动
-
-/qwen|minimax|glm/ => 国产开源模型
-
-/特斯拉|马斯克/ => 特斯拉
-
-/英伟达|\bNVIDIA\b|黄仁勋/i => 英伟达
-/\bAMD\b/i => AMD
-
-/微软|\bMicrosoft\b/i => 微软
-/谷歌|\bgoogle\b|\bgemini\b|\bdeepMind\b/i => 谷歌
-/\biphone\b|\bipad\b|\bmac\b|\bios\b/i => 苹果
-
-/\bchatgpt\b|\bopenai\b|\bsora\b/i => OpenAI
-/\bclaude\b|anthropic/i => Claude
+# （已禁用：避免影响广告/MarTech 主题。需要时去掉每行前面的 # 即可恢复）
+# /胖东来|于东来/ => 胖东来
+#
+# /DeepSeek|梁文锋/i => DeepSeek
+#
+# /华为|鸿蒙|HarmonyOS|任正非/i => 华为
+#
+# /比亚迪|王传福|byd/i => 比亚迪
+#
+# /大疆|\bDJI\b/i => 大疆
+#
+# /宇树|王兴兴|Unitree/ => 宇树机器人
+#
+# /智元|灵犀|稚晖君|彭志辉|AgiBot/ => 智元机器人
+# /众擎|EngineAI|赵同阳/ => 众擎机器人
+#
+# /黑神话|冯骥/ => 黑神话悟空
+#
+# /影之刃零|梁其伟/ => 影之刃零
+#
+# /三体|流浪地球|刘慈欣|郭帆/ => 三体/流浪地球
+#
+# 申奥
+#
+# /京东|刘强东/ => 京东
+#
+# /字节|bytedance|张一鸣/i => 字节跳动
+#
+# /qwen|minimax|glm/ => 国产开源模型
+#
+# /特斯拉|马斯克/ => 特斯拉
+#
+# /英伟达|\bNVIDIA\b|黄仁勋/i => 英伟达
+# /\bAMD\b/i => AMD
+#
+# /微软|\bMicrosoft\b/i => 微软
+# /谷歌|\bgoogle\b|\bgemini\b|\bdeepMind\b/i => 谷歌
+# /\biphone\b|\bipad\b|\bmac\b|\bios\b/i => 苹果
+#
+# /\bchatgpt\b|\bopenai\b|\bsora\b/i => OpenAI
+# /\bclaude\b|anthropic/i => Claude
 
 
 # ═══════════════════════════════════════════════════════════════
@@ -218,35 +221,42 @@
 
 
 # ═══════════════════════════════════════════════════════════════
-#                         科技领域
+#                    海外效果广告 + 线索增长（MarTech）
 # ═══════════════════════════════════════════════════════════════
+#
+# 说明：
+# - 这一段面向“广告投放/线索增长/隐私合规/归因测量/程序化广告/MarTech”
+# - 你可以按需要删减，或把别名改成你团队内部习惯的术语
 
-[AI 相关]
-/(?<![a-zA-Z])ai(?![a-zA-Z])/i
-人工智能
+[海外效果广告/投放技巧]
+/performance marketing|效果广告|效果营销|买量|投放技巧|投放方法论|投放策略|出价策略|bid strategy/i => 海外投放技巧
+/A\/B\s*test|AB\s*test|素材测试|创意测试|Creative Testing|Creative Fatigue|疲劳|迭代/i => 素材测试
+/转化率|CVR|CTR|CPA|CPL|CPM|CPC|ROAS|ROI|CAC|LTV|留存|复购/i => 增长指标
+/漏斗|funnel|落地页|landing page|LP|表单|form|线索|Lead/i => 线索增长
 
-[芯片]
-芯片
-光刻机
-半导体
+[程序化广告（DSP/SSP/RTB）]
+/\bDSP\b|\bSSP\b|程序化|Programmatic|RTB|OpenRTB|竞价|Header Bidding|Bid Request|Bid Response/i => DSP/SSP
+/ADX|AdX|AdSense|AdMob|Google\s*Ad\s*Manager|GAM/i => Google 广告变现
+/Pangle|穿山甲|Unity\s*Ads|ironSource|AppLovin|Vungle|Mintegral|InMobi/i => 变现/广告网络
 
-/水电|雅鲁藏布江/ => 水电
-/光伏|太阳能/ => 光伏
-核能
-能源
+[归因与测量（MMP/增量）]
+/attribution|归因|MMP|AppsFlyer|Adjust|Branch/i => MMP归因
+/SKAN|SKAdNetwork|ATT|IDFA|GAID|AAID|AEM|Conversion\s*API|CAPI/i => 隐私归因
+/MMM|营销组合模型|增量|incrementality|Lift\s*Test|Holdout/i => 增量测量
 
-/自动驾驶|无人驾驶|智驾/ => 自动驾驶
+[隐私合规/政策更新]
+/GDPR|CCPA|Consent|CMP|cookie|Cookies|第三方cookie|Privacy\s*Sandbox|Tracking\s*Protection/i => 隐私合规
+/广告政策|Ads\s*Policy|Policy\s*Update|违规|封号|限制投放|审核|Review/i => 广告合规
 
-机器人
-/机械狗|四足/ => 机器狗
-具身智能
+[Google 新规/平台更新]
+/Google\s*Ads|GAds|Performance\s*Max|PMax|Broad\s*Match|tROAS|tCPA/i => Google Ads 更新
+/Google\s*Play|Play\s*policy|开发者政策|Developer\s*Policy/i => Google Play 新规
+/Search\s*Central|核心更新|Core\s*Update|垃圾内容|Spam\s*Update/i => 搜索/落地页规则
 
-/月球|登月|火星|宇宙|飞船|航天|空间站|卫星/ => 航天
+[Meta/TikTok 投放更新]
+/Meta\s*Ads|Facebook\s*Ads|\bFB\s*Ads\b|Advantage\+|A\+|CAPI|Conversions\s*API/i => Meta投放更新
+/TikTok\s*Ads|TikTok\s*for\s*Business|Spark\s*Ads|Shop\s*Ads|GMV\s*Max/i => TikTok投放更新
 
-# 前沿科技
-量子
-脑机
-基因
-
-# 产业政策
-生产力
+[H5/小游戏投放]
+/H5|小游戏|小程序|mini\s*game|HTML5\s*game/i => H5/小游戏
+/试玩广告|Playable\s*Ads|playable|互动广告|Interactive\s*Ads/i => 试玩广告
