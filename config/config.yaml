@@ -26,30 +26,69 @@ app:
 #   - name: 显示名称（可自定义，修改后不影响运行）
 # ===============================================================
 platforms:
-  enabled: true                         # 是否启用热榜平台抓取
+  enabled: false                        # 是否启用热榜平台抓取（已关闭：优先使用 RSS 行业信息源）
   sources:
+    # === 综合新闻媒体类 ===
     - id: "toutiao"
       name: "今日头条"
     - id: "baidu"
       name: "百度热搜"
-    - id: "wallstreetcn-hot"
-      name: "华尔街见闻"
     - id: "thepaper"
       name: "澎湃新闻"
-    - id: "bilibili-hot-search"
-      name: "bilibili 热搜"
-    - id: "cls-hot"
-      name: "财联社热门"
     - id: "ifeng"
       name: "凤凰网"
-    - id: "tieba"
-      name: "贴吧"
-    - id: "weibo"
-      name: "微博"
-    - id: "douyin"
-      name: "抖音"
+    - id: "mktnews"
+      name: "MKT新闻"
+    - id: "kaopu"
+      name: "靠谱新闻"
+    - id: "tencent-hot"
+      name: "腾讯新闻 综合早报"
+
+    # === 财经投资类 ===
+    - id: "wallstreetcn-hot"
+      name: "华尔街见闻 最热"
+    - id: "wallstreetcn-quick"
+      name: "华尔街见闻 快讯"
+    - id: "wallstreetcn-news"
+      name: "华尔街见闻 最新"
+    - id: "cls-hot"
+      name: "财联社热门"
+    - id: "cls-telegraph"
+      name: "财联社 电报"
+    - id: "cls-depth"
+      name: "财联社 深度"
+    - id: "gelonghui"
+      name: "格隆汇"
+    - id: "xueqiu"
+      name: "雪球"
+    - id: "jin10"
+      name: "金十数据"
+    - id: "fastbull"
+      name: "快讯通"
+    - id: "fastbull-express"
+      name: "法布财经 快讯"
+    - id: "fastbull-news"
+      name: "法布财经 头条"
+
+    # === 社交/短视频/娱乐类 ===
+    - id: "bilibili-hot-search"
+      name: "bilibili 热搜"
     - id: "zhihu"
       name: "知乎"
+
+    # === 科技类平台 ===
+    - id: "ithome"
+      name: "IT之家"
+    - id: "juejin"
+      name: "掘金"
+    - id: "pcbeta"
+      name: "远景论坛"
+    - id: "sspai"
+      name: "少数派"
+
+    # === 其他/工具类 ===
+    - id: "chongbuluo"
+      name: "虫部落"
 
 
 
@@ -77,7 +116,7 @@ rss:
   freshness_filter:
     enabled: true                     # 是否启用新鲜度过滤（默认启用）
 
-    max_age_days: 3                   # 最大文章年龄（天）
+    max_age_days: 7                   # 最大文章年龄（天）
                                       # - 正整数：只推送 N 天内的文章
                                       # - 0：禁用过滤，推送所有文章
 
@@ -86,20 +125,54 @@ rss:
   # - 正整数：覆盖全局设置，只推送此天数内的文章
   # - 0：禁用此频道的新鲜度过滤，推送所有文章
   feeds:
+    # === 广告/增长/MarTech（推荐）===
+    - id: "google-ads-blog"
+      name: "Google Ads 官方博客"
+      url: "https://blog.google/products/ads/rss/"
+
+    - id: "google-ads-dev"
+      name: "Google Ads Developer Blog"
+      url: "https://feeds.feedburner.com/GoogleAdsDeveloperBlog"
+
+    - id: "google-search-central"
+      name: "Google Search Central"
+      url: "https://developers.google.com/search/blog/rss.xml"
+
+    - id: "chrome-dev"
+      name: "Chrome Developers Blog"
+      url: "https://developer.chrome.com/blog/feed.xml"
+
+    - id: "meta-newsroom"
+      name: "Meta/Facebook Newsroom"
+      url: "https://about.fb.com/feed"
+
+    - id: "adexchanger"
+      name: "AdExchanger"
+      url: "https://www.adexchanger.com/feed/"
+
+    - id: "martech"
+      name: "MarTech.org"
+      url: "https://martech.org/feed/"
+
+    - id: "search-engine-journal"
+      name: "Search Engine Journal"
+      url: "https://www.searchenginejournal.com/feed/"
+
+    # === 其他参考（默认关闭）===
     - id: "hacker-news"
       name: "Hacker News"
       url: "https://hnrss.org/frontpage"
-      # max_age_days: 1               # 示例：只推送1天内的文章
+      enabled: false
 
     - id: "ruanyifeng"
       name: "阮一峰的网络日志"
       url: "http://www.ruanyifeng.com/blog/atom.xml"
-      # max_age_days: 7               # 示例：推送7天内的文章（更新较慢的博客）
-    
+      enabled: false
+
     - id: "yahoo-finance"
       name: "雅虎财经"
       url: "https://finance.yahoo.com/news/rssindex"
-      enabled: false                  # 禁用
+      enabled: false
 
     # 自定义源示例
     # - id: "custom-feed"
@@ -170,7 +243,7 @@ display:
   # 推送区域开关
   # 控制各区域是否启用（配合 region_order 使用）
   regions:
-    hotlist: true                     # 热榜区域（关键词匹配的热点新闻）
+    hotlist: false                    # 热榜区域（关键词匹配的热点新闻，已关闭：热榜平台已关闭）
     new_items: true                   # 新增热点区域（含热榜新增 + RSS 新增）
                                       # 注：热点词汇统计中的新增标记🆕不受此配置影响
 
